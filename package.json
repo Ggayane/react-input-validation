@@ -1,6 +1,6 @@
 {
   "name": "react-input-validation",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "react-input-validation",
   "main": "lib/ReactInputValidation.js",
   "author": "Gayane Gasparyan",
@@ -42,6 +42,9 @@
   },
   "keywords": [
     "react",
-    "react-component"
+    "react-component",
+    "form",
+    "validation",
+    "input"
   ]
 }

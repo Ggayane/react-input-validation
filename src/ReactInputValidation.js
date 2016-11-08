@@ -75,6 +75,8 @@ export default class ReactInputValidation extends React.Component {
         return ValidationRules.checkRePassword(value, this.props.relValue)
       case 'positiveNumberWithLimit':
         return ValidationRules.positiveNumberWithLimit(value, this.props.limitNumber || 1)
+      case 'custom':
+        return ValidationRules.customValidation(value, this.props.validatePattern)
 
     }
   }
@@ -156,9 +158,10 @@ ReactInputValidation.propTypes = {
   placeholder: React.PropTypes.string,
   type: React.PropTypes.string, // input type, by default this is 'text'
   value: React.PropTypes.string.isRequired,
-  validateType: React.PropTypes.oneOf(['email', 'required', 'onlyPositiveNumbers', 'url', 'password', 're_password', 'positiveNumberWithLimit']),
+  validateType: React.PropTypes.oneOf(['email', 'required', 'onlyPositiveNumbers', 'url', 'password', 're_password', 'positiveNumberWithLimit', 'custom']),
   passwordMinLength: React.PropTypes.number, // use if your validateType = 'password'
   limitNumber: React.PropTypes.number, // use if your validateType = 'positiveNumberWithLimit'
+  validatePattern: React.PropTypes.string, // use if your validateType = 'custom'
   relValue: React.PropTypes.string, // use if your validateType = 're_password'
   withAddon: React.PropTypes.string, // optional, text of addon, use in case you want to have bootstrap inputs with addon icons
   addonPos: React.PropTypes.string, // position of addon, default is 'right'

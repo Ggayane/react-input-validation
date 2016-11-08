@@ -31,11 +31,17 @@ function positiveNumberWithLimit (value, limit) {
   return false
 }
 
+function customValidation (value, regex) {
+  var pattern = new RegExp(regex)
+  return pattern.test(value)
+}
+
 module.exports = {
   checkEmail,
   checkNumberPositive,
   checkUrl,
   checkPassword,
   checkRePassword,
-  positiveNumberWithLimit
+  positiveNumberWithLimit,
+  customValidation
 }

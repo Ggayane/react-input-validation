@@ -34,20 +34,40 @@ npm install react-input-validation --save
 var FormInput = require('react-input-validation');
 
 <FormInput
-	text='Check Email'
-	emptyMessage='email is required'
-	errorMessage='Not valid email'
-	type='email'
-	value={this.state.email || ''}
-	onChange={prop => this._onChangeValue({prop}, 'email')}
+	text='Label text here'
+	emptyMessage='this field is required'
+	errorMessage='Not valid'
+	type='number' // default is 'text'
+	value={this.state.example || ''}
+	onChange={prop => this._onChangeValue({prop})}
 	validateType='email'
 	onKeyPress={this.handleKeyPress}
-	ref='email'/>
+	ref='email' />
 ```
 
 ### Notes
 
-To check the validation there is a `isValid()` function wich you can call with component ref. For more details take a look at  `_isAllValuesTrue()` function which is in `react-input-validation/example/src/example.js`. 
+You can pass the following props to the component:
+
+- **onChange**: function that will give you the value of input
+- **onKeyPress**: optional, for handling keypress on inputs
+- **text**: text of label
+- **emptyMessage**: this will be appeared when input is empty
+- **errorMessage**: this will be appeared when input is not valid
+- **className**: optional, give custom class name to input
+- **placeholder**: optional
+- **type**: type of input
+- **value**: value of input
+- **validateType**: there are build in types for validating - ['email', 'required', 'onlyPositiveNumbers', 'url', 'password', 're_password', 'positiveNumberWithLimit', 'custom']
+- **passwordMinLength**: use if your validateType = 'password'
+- **limitNumber**: use if your validateType = 'positiveNumberWithLimit'
+- **validatePattern**: use if your validateType = 'custom', this should be valid regular expression
+- **relValue**: use if your validateType = 're_password'
+- **withAddon**: optional, text of addon, use in case you want to have bootstrap inputs with addon icons
+- **addonPos**: position of addon, default is 'right'
+- **ref**: always use this for validating (must be unique)
+
+To check the validation there is a `isValid()` function which you can call with component ref. For more details take a look at  `_isAllValuesTrue()` function which is in `react-input-validation/example/src/example.js`.
 
 
 ## Development (`src`, `lib` and the build process)
@@ -58,4 +78,4 @@ To build, watch and serve the examples (which will also watch the component sour
 
 ## License
 
-[MIT] (https://github.com/Ggayane/react-input-validation/blob/master/license.md)
+[MIT](https://github.com/Ggayane/react-input-validation/blob/master/license.md)
