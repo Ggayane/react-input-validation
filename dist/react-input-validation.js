@@ -119,6 +119,8 @@ var ReactInputValidation = (function (_React$Component) {
           return _libValidationRules2['default'].checkRePassword(value, this.props.relValue);
         case 'positiveNumberWithLimit':
           return _libValidationRules2['default'].positiveNumberWithLimit(value, this.props.limitNumber || 1);
+        case 'custom':
+          return _libValidationRules2['default'].customValidation(value, this.props.validatePattern);
 
       }
     }
@@ -214,9 +216,10 @@ ReactInputValidation.propTypes = {
   placeholder: _react2['default'].PropTypes.string,
   type: _react2['default'].PropTypes.string, // input type, by default this is 'text'
   value: _react2['default'].PropTypes.string.isRequired,
-  validateType: _react2['default'].PropTypes.oneOf(['email', 'required', 'onlyPositiveNumbers', 'url', 'password', 're_password', 'positiveNumberWithLimit']),
+  validateType: _react2['default'].PropTypes.oneOf(['email', 'required', 'onlyPositiveNumbers', 'url', 'password', 're_password', 'positiveNumberWithLimit', 'custom']),
   passwordMinLength: _react2['default'].PropTypes.number, // use if your validateType = 'password'
   limitNumber: _react2['default'].PropTypes.number, // use if your validateType = 'positiveNumberWithLimit'
+  validatePattern: _react2['default'].PropTypes.string, // use if your validateType = 'custom'
   relValue: _react2['default'].PropTypes.string, // use if your validateType = 're_password'
   withAddon: _react2['default'].PropTypes.string, // optional, text of addon, use in case you want to have bootstrap inputs with addon icons
   addonPos: _react2['default'].PropTypes.string, // position of addon, default is 'right'
@@ -283,13 +286,19 @@ function positiveNumberWithLimit(value, limit) {
   return false;
 }
 
+function customValidation(value, regex) {
+  var pattern = new RegExp(regex);
+  return pattern.test(value);
+}
+
 module.exports = {
   checkEmail: checkEmail,
   checkNumberPositive: checkNumberPositive,
   checkUrl: checkUrl,
   checkPassword: checkPassword,
   checkRePassword: checkRePassword,
-  positiveNumberWithLimit: positiveNumberWithLimit
+  positiveNumberWithLimit: positiveNumberWithLimit,
+  customValidation: customValidation
 };
 
 },{}]},{},[1])(1)

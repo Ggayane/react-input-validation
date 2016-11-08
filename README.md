@@ -1,6 +1,6 @@
 # react-input-validation
 
-A small react component for form input tags validations, for now with limited features. Sooner will be updated.
+A small validation component for inputs which you can use everywhere and set any kind of validation you want to!
 
 
 ## Demo & Examples
@@ -58,7 +58,7 @@ You can pass the following props to the component:
 - **placeholder**: optional
 - **type**: type of input
 - **value**: value of input
-- **validateType**: there are build in types for validating - ['email', 'required', 'onlyPositiveNumbers', 'url', 'password', 're_password', 'positiveNumberWithLimit', 'custom']
+- **validateType**: there are built-in types for validating - ['email', 'required', 'onlyPositiveNumbers', 'url', 'password', 're_password', 'positiveNumberWithLimit', 'custom']
 - **passwordMinLength**: use if your validateType = 'password'
 - **limitNumber**: use if your validateType = 'positiveNumberWithLimit'
 - **validatePattern**: use if your validateType = 'custom', this should be valid regular expression
