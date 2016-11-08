@@ -46,7 +46,7 @@ export default class App extends React.Component {
 			<div className='row'>
 				<div className='col-md-6 col-md-offset-3'>
 					<FormInput
-						text='Check Email'
+						text='Email'
 						emptyMessage='email is required'
 						errorMessage='Not valid email'
 						type='email'
