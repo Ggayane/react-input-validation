@@ -30,8 +30,6 @@ npm install react-input-validation --save
 
 ## Usage
 
-__EXPLAIN USAGE HERE__
-
 ```
 var FormInput = require('react-input-validation');
 
