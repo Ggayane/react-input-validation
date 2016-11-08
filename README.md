@@ -49,7 +49,7 @@ var FormInput = require('react-input-validation');
 
 ### Notes
 
-to check the validation there is isValid() function wich you can call with component ref. For more details take a look at  example.js _isAllValuesTrue() function.
+to check the validation there is `isValid()` function wich you can call with component ref. For more details take a look at  example.js `_isAllValuesTrue()` function.
 
 
 ## Development (`src`, `lib` and the build process)
