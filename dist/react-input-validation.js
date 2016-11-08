@@ -40,10 +40,23 @@ var ReactInputValidation = (function (_React$Component) {
       empty: this.isEmpty(this.props.value),
       valid: null
     };
-    _libUtils2['default']._bind('handleChange', 'handlekeyPress');
+    this._bind('handleChange', 'handlekeyPress');
   }
 
   _createClass(ReactInputValidation, [{
+    key: '_bind',
+    value: function _bind() {
+      var _this = this;
+
+      for (var _len = arguments.length, methods = Array(_len), _key = 0; _key < _len; _key++) {
+        methods[_key] = arguments[_key];
+      }
+
+      methods.forEach(function (method) {
+        return _this[method] = _this[method].bind(_this);
+      });
+    }
+  }, {
     key: 'isEmpty',
     value: function isEmpty(value) {
       return value === '';
@@ -200,14 +213,14 @@ ReactInputValidation.propTypes = {
   className: _react2['default'].PropTypes.string,
   placeholder: _react2['default'].PropTypes.string,
   type: _react2['default'].PropTypes.string, // input type, by default this is 'text'
-  value: _react2['default'].PropTypes.isRequired,
-  validateType: _react2['default'].PropTypes.oneOf(['checkEmail', 'checkNumberPositive', 'checkUrl', 'checkPassword', 'checkRePassword', 'positiveNumberWithLimit']),
+  value: _react2['default'].PropTypes.string.isRequired,
+  validateType: _react2['default'].PropTypes.oneOf(['email', 'required', 'onlyPositiveNumbers', 'url', 'password', 're_password', 'positiveNumberWithLimit']),
   passwordMinLength: _react2['default'].PropTypes.number, // use if your validateType = 'password'
   limitNumber: _react2['default'].PropTypes.number, // use if your validateType = 'positiveNumberWithLimit'
   relValue: _react2['default'].PropTypes.string, // use if your validateType = 're_password'
   withAddon: _react2['default'].PropTypes.string, // optional, text of addon, use in case you want to have bootstrap inputs with addon icons
   addonPos: _react2['default'].PropTypes.string, // position of addon, default is 'right'
-  ref: _react2['default'].PropTypes.isRequired // always use this for validating (must be unique)
+  ref: _react2['default'].PropTypes.string // always use this for validating (must be unique)
 };
 module.exports = exports['default'];
 
