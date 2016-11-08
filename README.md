@@ -1,6 +1,6 @@
 # react-input-validation
 
-__COMPONENT DESCRIPTION GOES HERE__
+A small react component for form input validations. For now it only for input tags with limited features.
 
 
 ## Demo & Examples
@@ -33,18 +33,23 @@ npm install react-input-validation --save
 __EXPLAIN USAGE HERE__
 
 ```
-var ReactInputValidation = require('react-input-validation');
+var FormInput = require('react-input-validation');
 
-<ReactInputValidation>Example</ReactInputValidation>
+<FormInput
+	text='Check Email'
+	emptyMessage='email is required'
+	errorMessage='Not valid email'
+	type='email'
+	value={this.state.email || ''}
+	onChange={prop => this._onChangeValue({prop}, 'email')}
+	validateType='email'
+	onKeyPress={this.handleKeyPress}
+	ref='email'/>
 ```
-
-### Properties
-
-* __DOCUMENT PROPERTIES HERE__
 
 ### Notes
 
-__ADDITIONAL USAGE NOTES__
+to check the validation there is isValid() function wich you can call with component ref. For more details take a look at  example.js _isAllValuesTrue() function.
 
 
 ## Development (`src`, `lib` and the build process)
