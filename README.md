@@ -55,7 +55,4 @@ To build, watch and serve the examples (which will also watch the component sour
 
 ## License
 
-__PUT LICENSE HERE__
-
-Copyright (c) 2016 Gayane Gasparyan.
-
+[MIT] (https://github.com/Ggayane/react-input-validation/blob/master/license.md)

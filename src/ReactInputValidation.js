@@ -11,7 +11,11 @@ export default class ReactInputValidation extends React.Component {
       empty: this.isEmpty(this.props.value),
       valid: null
     }
-    utils._bind('handleChange', 'handlekeyPress')
+    this._bind('handleChange', 'handlekeyPress')
+  }
+
+  _bind (...methods) {
+    methods.forEach((method) => this[method] = this[method].bind(this))
   }
 
   isEmpty (value) {
@@ -151,12 +155,12 @@ ReactInputValidation.propTypes = {
   className: React.PropTypes.string,
   placeholder: React.PropTypes.string,
   type: React.PropTypes.string, // input type, by default this is 'text'
-  value: React.PropTypes.isRequired,
-  validateType: React.PropTypes.oneOf(['checkEmail', 'checkNumberPositive', 'checkUrl', 'checkPassword', 'checkRePassword', 'positiveNumberWithLimit']),
+  value: React.PropTypes.string.isRequired,
+  validateType: React.PropTypes.oneOf(['email', 'required', 'onlyPositiveNumbers', 'url', 'password', 're_password', 'positiveNumberWithLimit']),
   passwordMinLength: React.PropTypes.number, // use if your validateType = 'password'
   limitNumber: React.PropTypes.number, // use if your validateType = 'positiveNumberWithLimit'
   relValue: React.PropTypes.string, // use if your validateType = 're_password'
   withAddon: React.PropTypes.string, // optional, text of addon, use in case you want to have bootstrap inputs with addon icons
   addonPos: React.PropTypes.string, // position of addon, default is 'right'
-  ref: React.PropTypes.isRequired // always use this for validating (must be unique)
+  ref: React.PropTypes.string // always use this for validating (must be unique)
 }
