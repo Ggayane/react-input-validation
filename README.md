@@ -1,6 +1,6 @@
 # react-input-validation
 
-A small react component for form input validations. For now it only for input tags with limited features.
+A small react component for form input tags validations, for now with limited features. Sooner will be updated.
 
 
 ## Demo & Examples
