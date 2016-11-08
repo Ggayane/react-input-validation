@@ -88,7 +88,7 @@ var App = (function (_React$Component) {
 					'div',
 					{ className: 'col-md-6 col-md-offset-3' },
 					_react2['default'].createElement(_reactInputValidation2['default'], {
-						text: 'Check Email',
+						text: 'Email',
 						emptyMessage: 'email is required',
 						errorMessage: 'Not valid email',
 						type: 'email',
