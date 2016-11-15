@@ -45,7 +45,7 @@ var FormInput = require('react-input-validation');
 	ref='email' />
 ```
 
-### Notes
+## Notes
 
 You can pass the following props to the component:
 
